@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Submit Instructor Drop Form{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>Submit Instructor Drop Form</h2>
+    <form action="{{ url_for('form_submit_drop') }}" method="POST">
+        <label>Student Name:</label>
+        <input type="text" name="student_name" class="form-control" required>
+
+        <label>UH PeopleSoft ID:</label>
+        <input type="text" name="uh_id" class="form-control" required>
+
+        <label>Course Subject:</label>
+        <input type="text" name="course_subject" class="form-control" required>
+
+        <label>Course Number:</label>
+        <input type="text" name="course_number" class="form-control" required>
+
+        <label>Semester:</label>
+        <select name="semester" class="form-control">
+            <option value="Fall">Fall</option>
+            <option value="Spring">Spring</option>
+            <option value="Summer">Summer</option>
+        </select>
+
+        <label>Year:</label>
+        <input type="number" name="year" class="form-control" required>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}

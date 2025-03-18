@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Submit Thesis Approval{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h2>Submit Your Thesis Approval Form</h2>
+    <form action="{{ url_for('form_submit_thesis') }}" method="POST">
+        <label>Student Name:</label>
+        <input type="text" name="student_name" class="form-control" required>
+
+        <label>UH PeopleSoft ID:</label>
+        <input type="text" name="uh_id" class="form-control" required>
+
+        <label>Student Email:</label>
+        <input type="email" name="student_email" class="form-control" required>
+
+        <label>Degree:</label>
+        <select name="degree" class="form-control">
+            <option value="doctoral">Doctoral</option>
+            <option value="masters">Master’s</option>
+        </select>
+
+        <label>Program:</label>
+        <input type="text" name="program" class="form-control" required>
+
+        <label>Defense Date:</label>
+        <input type="date" name="defense_date" class="form-control" required>
+
+        <label>Anticipated Graduation Date:</label>
+        <input type="month" name="graduation_date" class="form-control" required>
+
+        <label>Thesis Title:</label>
+        <input type="text" name="thesis_title" class="form-control" required>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
