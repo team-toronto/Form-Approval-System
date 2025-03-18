@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Track Request{% endblock %}
+
+{% block content %}
+<div class="card p-4">
+    <h2>Track Your Request</h2>
+    <form action="{{ url_for('track_status') }}" method="GET">
+        <div class="mb-3">
+            <label class="form-label">Enter Request ID:</label>
+            <input type="text" class="form-control" name="request_id" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Check Status</button>
+    </form>
+</div>
+{% endblock %}
