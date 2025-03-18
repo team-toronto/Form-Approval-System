@@ -5,8 +5,14 @@
 <div class="card">
     <h2>Submit Your Thesis Approval Form</h2>
     <form action="{{ url_for('form_submit_thesis') }}" method="POST">
-        <label>Student Name:</label>
-        <input type="text" name="student_name" class="form-control" required>
+        <label>First Name:</label>
+        <input type="text" name="first_name" class="form-control" required>
+
+        <label>Middle Initial (Optional):</label>
+        <input type="text" name="middle_initial" class="form-control" maxlength="1">
+
+        <label>Last Name:</label>
+        <input type="text" name="last_name" class="form-control" required>
 
         <label>UH PeopleSoft ID:</label>
         <input type="text" name="uh_id" class="form-control" required>
@@ -31,6 +37,10 @@
 
         <label>Thesis Title:</label>
         <input type="text" name="thesis_title" class="form-control" required>
+
+        <label>Upload Your Signature:</label>
+        <input type="file" name="signature" class="form-control" accept="image/*" required>
+
 
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
